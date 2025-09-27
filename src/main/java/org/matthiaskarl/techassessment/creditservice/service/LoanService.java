@@ -22,16 +22,10 @@ public class LoanService {
     private final LimitsRepository limitsRepository;
     private final ProductsRepository productsRepository;
 
-    public List<LoanDto> getLoansByUserId(String userId) {
-        long uid = Long.parseLong(userId);
+    public List<LoanDto> getLoansByUserId(long userId) {
         List<LoanDto> loanDtos = new ArrayList<>();
 
-        for (FinancingObject financingObject : financingObjectRepository.findAll()) {
-            boolean owned = financingObject.owners().stream().anyMatch(owner -> owner.id() == uid);
-            if (!owned) {
-                continue;
-            }
-
+        for (FinancingObject financingObject : financingObjectRepository.findByOwnerId(userId)) {
             Limit limit = limitsRepository.findById(financingObject.limit());
 
             List<Product> products = new ArrayList<>();

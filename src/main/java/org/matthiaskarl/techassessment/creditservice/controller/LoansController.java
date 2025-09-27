@@ -20,8 +20,9 @@ public class LoansController {
 
     @GetMapping("/loansByUser/{userId}")
     public ResponseEntity<List<LoanDto>> loansByUser(@PathVariable String userId) {
-        List<LoanDto> result = loanService.getLoansByUserId(userId);
-        return ResponseEntity.ok(result);
+        long parsedUserId = Long.parseLong(userId);
+        List<LoanDto> loans = loanService.getLoansByUserId(parsedUserId);
+        return ResponseEntity.ok(loans);
     }
 
 }

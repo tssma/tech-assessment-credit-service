@@ -69,10 +69,10 @@ class ContractShapeTest {
             assertRequiredText(col, "currencyCode");
             assertRequiredText(col, "specification");
             assertRequiredText(col, "nextRevaluationDate");
-            assertRequiredText(col, "AmortisationPaymentAmount");
+            assertRequiredText(col, "amortisationPaymentAmount");
             assertThat(getText(col, "currencyCode")).hasSize(3);
             assertNumericString(col, "currentValue");
-            assertNumericString(col, "AmortisationPaymentAmount");
+            assertNumericString(col, "amortisationPaymentAmount");
             assertThat(isIsoDate(getText(col, "nextRevaluationDate"))).isTrue();
         }
     }

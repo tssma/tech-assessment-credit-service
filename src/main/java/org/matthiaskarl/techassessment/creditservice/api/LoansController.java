@@ -15,6 +15,7 @@ import java.util.List;
 @RequestMapping("/service/v1")
 @RequiredArgsConstructor
 public class LoansController {
+
     private final LoanService loanService;
 
     @GetMapping("/loansByUser/{userId}")

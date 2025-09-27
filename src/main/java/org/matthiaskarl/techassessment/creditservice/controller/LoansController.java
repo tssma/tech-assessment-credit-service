@@ -1,4 +1,4 @@
-package org.matthiaskarl.techassessment.creditservice.api;
+package org.matthiaskarl.techassessment.creditservice.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.matthiaskarl.techassessment.creditservice.dto.LoanDto;

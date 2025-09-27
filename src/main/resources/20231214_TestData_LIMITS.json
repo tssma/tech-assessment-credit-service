@@ -1,0 +1,902 @@
+[
+  {
+    "id":200001,
+    "name":"Basiskredit Darlehen",
+    "type":"Darlehen",
+    "limitAmount":1000000,
+    "amortisationAmountAnnual":6000,
+    "agreedAmortisationFrequency":4,
+    "contractNumber":"2000-00001.11",
+    "realSecurities":[
+      {
+        "type":"Bauland",
+        "address":"Feldweg 808, 7072 Chur",
+        "collateralValue":1080000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.03.2026"
+      }
+    ]
+  },
+  {
+    "id":200002,
+    "name":"Basiskredit Rahmenkredit",
+    "type":"Rahmenkredit",
+    "limitAmount":1200000,
+    "amortisationAmountAnnual":8000,
+    "agreedAmortisationFrequency":6,
+    "contractNumber":"2000-00002.12",
+    "realSecurities":[
+      {
+        "type":"Einfamilienhaus",
+        "address":"Talstrasse 909, 6061 Basel",
+        "collateralValue":1320000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.09.2026"
+      }
+    ]
+  },
+  {
+    "id":200003,
+    "name":"Basiskredit Hypothek",
+    "type":"Hypothek",
+    "limitAmount":1400000,
+    "amortisationAmountAnnual":10000,
+    "agreedAmortisationFrequency":2,
+    "contractNumber":"2000-00003.13",
+    "realSecurities":[
+      {
+        "type":"Mehrfamilienhaus",
+        "address":"Bergstrasse 1010, 4041 Zürich",
+        "collateralValue":1540000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.12.2027"
+      }
+    ]
+  },
+  {
+    "id":200004,
+    "name":"Basiskredit Darlehen",
+    "type":"Darlehen",
+    "limitAmount":1800000,
+    "amortisationAmountAnnual":12000,
+    "agreedAmortisationFrequency":1,
+    "contractNumber":"2000-00004.14",
+    "realSecurities":[
+      {
+        "type":"Gartenhaus",
+        "address":"Allee 1212, 3031 Bern",
+        "collateralValue":1620000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.06.2027"
+      }
+    ]
+  },
+  {
+    "id":200005,
+    "name":"Basiskredit Rahmenkredit",
+    "type":"Rahmenkredit",
+    "limitAmount":2000000,
+    "amortisationAmountAnnual":8000,
+    "agreedAmortisationFrequency":12,
+    "contractNumber":"2000-00005.15",
+    "realSecurities":[
+      {
+        "type":"Reihenhaus",
+        "address":"Winkelgasse 1313, 7073 Chur",
+        "collateralValue":1880000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.09.2028"
+      }
+    ]
+  },
+  {
+    "id":200006,
+    "name":"Basiskredit Hypothek",
+    "type":"Hypothek",
+    "limitAmount":900000,
+    "amortisationAmountAnnual":4000,
+    "agreedAmortisationFrequency":3,
+    "contractNumber":"2000-00006.16",
+    "realSecurities":[
+      {
+        "type":"Stockwerkeigentum",
+        "address":"Gassenweg 1414, 5051 Basel",
+        "collateralValue":990000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.12.2028"
+      }
+    ]
+  },
+  {
+    "id":200007,
+    "name":"Basiskredit Darlehen",
+    "type":"Darlehen",
+    "limitAmount":1100000,
+    "amortisationAmountAnnual":10000,
+    "agreedAmortisationFrequency":6,
+    "contractNumber":"2000-00007.17",
+    "realSecurities":[
+      {
+        "type":"Bauland",
+        "address":"Parkstrasse 1515, 8081 Zürich",
+        "collateralValue":1210000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.03.2029"
+      }
+    ]
+  },
+  {
+    "id":200008,
+    "name":"Basiskredit Rahmenkredit",
+    "type":"Rahmenkredit",
+    "limitAmount":1300000,
+    "amortisationAmountAnnual":6000,
+    "agreedAmortisationFrequency":4,
+    "contractNumber":"2000-00008.18",
+    "realSecurities":[
+      {
+        "type":"Einfamilienhaus",
+        "address":"Haldenweg 1616, 3015 Bern",
+        "collateralValue":1360000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.06.2029"
+      }
+    ]
+  },
+  {
+    "id":200009,
+    "name":"Basiskredit Hypothek",
+    "type":"Hypothek",
+    "limitAmount":700000,
+    "amortisationAmountAnnual":8000,
+    "agreedAmortisationFrequency":2,
+    "contractNumber":"2000-00009.19",
+    "realSecurities":[
+      {
+        "type":"Mehrfamilienhaus",
+        "address":"Höhenweg 1717, 4042 Zürich",
+        "collateralValue":630000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.09.2030"
+      }
+    ]
+  },
+  {
+    "id":200010,
+    "name":"Basiskredit Darlehen",
+    "type":"Darlehen",
+    "limitAmount":1300000,
+    "amortisationAmountAnnual":12000,
+    "agreedAmortisationFrequency":1,
+    "contractNumber":"2000-00010.20",
+    "realSecurities":[
+      {
+        "type":"Gartenhaus",
+        "address":"Seeweg 1818, 3032 Bern",
+        "collateralValue":1230000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.12.2030"
+      }
+    ]
+  },
+  {
+    "id":200011,
+    "name":"Basiskredit Rahmenkredit",
+    "type":"Rahmenkredit",
+    "limitAmount":1600000,
+    "amortisationAmountAnnual":5000,
+    "agreedAmortisationFrequency":12,
+    "contractNumber":"2000-00011.21",
+    "realSecurities":[
+      {
+        "type":"Reihenhaus",
+        "address":"Feldgasse 1919, 5052 Basel",
+        "collateralValue":1400000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.03.2031"
+      }
+    ]
+  },
+  {
+    "id":200012,
+    "name":"Basiskredit Hypothek",
+    "type":"Hypothek",
+    "limitAmount":1200000,
+    "amortisationAmountAnnual":10000,
+    "agreedAmortisationFrequency":6,
+    "contractNumber":"2000-00012.22",
+    "realSecurities":[
+      {
+        "type":"Stockwerkeigentum",
+        "address":"Querstrasse 2020, 8082 Zürich",
+        "collateralValue":1200000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.06.2031"
+      }
+    ]
+  },
+  {
+    "id":200013,
+    "name":"Basiskredit Darlehen",
+    "type":"Darlehen",
+    "limitAmount":1000000,
+    "amortisationAmountAnnual":4000,
+    "agreedAmortisationFrequency":4,
+    "contractNumber":"2000-00013.23",
+    "realSecurities":[
+      {
+        "type":"Bauland",
+        "address":"Feldweg 2121, 7073 Chur",
+        "collateralValue":1110000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.09.2032"
+      }
+    ]
+  },
+  {
+    "id":200014,
+    "name":"Basiskredit Rahmenkredit",
+    "type":"Rahmenkredit",
+    "limitAmount":800000,
+    "amortisationAmountAnnual":12000,
+    "agreedAmortisationFrequency":3,
+    "contractNumber":"2000-00014.24",
+    "realSecurities":[
+      {
+        "type":"Einfamilienhaus",
+        "address":"Berggasse 2222, 6062 Basel",
+        "collateralValue":720000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.12.2032"
+      }
+    ]
+  },
+  {
+    "id":200015,
+    "name":"Basiskredit Hypothek",
+    "type":"Hypothek",
+    "limitAmount":1500000,
+    "amortisationAmountAnnual":8000,
+    "agreedAmortisationFrequency":1,
+    "contractNumber":"2000-00015.25",
+    "realSecurities":[
+      {
+        "type":"Gartenhaus",
+        "address":"Blumenweg 2323, 8083 Zürich",
+        "collateralValue":1350000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.03.2033"
+      }
+    ]
+  },
+  {
+    "id":200016,
+    "name":"Basiskredit Darlehen",
+    "type":"Darlehen",
+    "limitAmount":1700000,
+    "amortisationAmountAnnual":6000,
+    "agreedAmortisationFrequency":6,
+    "contractNumber":"2000-00016.26",
+    "realSecurities":[
+      {
+        "type":"Reihenhaus",
+        "address":"Wiesenstrasse 2424, 3016 Bern",
+        "collateralValue":1870000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.06.2033"
+      }
+    ]
+  },
+  {
+    "id":200017,
+    "name":"Basiskredit Rahmenkredit",
+    "type":"Rahmenkredit",
+    "limitAmount":1900000,
+    "amortisationAmountAnnual":10000,
+    "agreedAmortisationFrequency":2,
+    "contractNumber":"2000-00017.27",
+    "realSecurities":[
+      {
+        "type":"Mehrfamilienhaus",
+        "address":"Sonnenallee 2525, 4043 Zürich",
+        "collateralValue":1970000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.09.2034"
+      }
+    ]
+  },
+  {
+    "id":200018,
+    "name":"Basiskredit Hypothek",
+    "type":"Hypothek",
+    "limitAmount":1100000,
+    "amortisationAmountAnnual":12000,
+    "agreedAmortisationFrequency":4,
+    "contractNumber":"2000-00018.28",
+    "realSecurities":[
+      {
+        "type":"Stockwerkeigentum",
+        "address":"Alpenstrasse 2626, 5053 Basel",
+        "collateralValue":1180000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.12.2034"
+      }
+    ]
+  },
+  {
+    "id":200019,
+    "name":"Basiskredit Darlehen",
+    "type":"Darlehen",
+    "limitAmount":1300000,
+    "amortisationAmountAnnual":8000,
+    "agreedAmortisationFrequency":12,
+    "contractNumber":"2000-00019.29",
+    "realSecurities":[
+      {
+        "type":"Bauland",
+        "address":"Gassenweg 2727, 7074 Chur",
+        "collateralValue":1170000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.03.2035"
+      }
+    ]
+  },
+  {
+    "id":200020,
+    "name":"Basiskredit Rahmenkredit",
+    "type":"Rahmenkredit",
+    "limitAmount":1500000,
+    "amortisationAmountAnnual":4000,
+    "agreedAmortisationFrequency":3,
+    "contractNumber":"2000-00020.30",
+    "realSecurities":[
+      {
+        "type":"Einfamilienhaus",
+        "address":"Parkstrasse 2828, 6063 Basel",
+        "collateralValue":1320000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.06.2035"
+      }
+    ]
+  },
+  {
+    "id":200021,
+    "name":"Basiskredit Hypothek",
+    "type":"Hypothek",
+    "limitAmount":900000,
+    "amortisationAmountAnnual":10000,
+    "agreedAmortisationFrequency":1,
+    "contractNumber":"2000-00021.31",
+    "realSecurities":[
+      {
+        "type":"Gartenhaus",
+        "address":"Haldenweg 2929, 8084 Zürich",
+        "collateralValue":891000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.12.2026"
+      }
+    ]
+  },
+  {
+    "id":200022,
+    "name":"Basiskredit Darlehen",
+    "type":"Darlehen",
+    "limitAmount":1200000,
+    "amortisationAmountAnnual":6000,
+    "agreedAmortisationFrequency":6,
+    "contractNumber":"2000-00022.32",
+    "realSecurities":[
+      {
+        "type":"Reihenhaus",
+        "address":"Höhenweg 3030, 3017 Bern",
+        "collateralValue":1260000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.03.2027"
+      }
+    ]
+  },
+  {
+    "id":200023,
+    "name":"Basiskredit Rahmenkredit",
+    "type":"Rahmenkredit",
+    "limitAmount":1400000,
+    "amortisationAmountAnnual":12000,
+    "agreedAmortisationFrequency":4,
+    "contractNumber":"2000-00023.33",
+    "realSecurities":[
+      {
+        "type":"Mehrfamilienhaus",
+        "address":"Feldweg 3131, 4041 Zürich",
+        "collateralValue":1260000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.09.2027"
+      }
+    ]
+  },
+  {
+    "id":200024,
+    "name":"Basiskredit Hypothek",
+    "type":"Hypothek",
+    "limitAmount":1600000,
+    "amortisationAmountAnnual":10000,
+    "agreedAmortisationFrequency":2,
+    "contractNumber":"2000-00024.34",
+    "realSecurities":[
+      {
+        "type":"Gartenhaus",
+        "address":"Bergstrasse 3232, 8085 Zürich",
+        "collateralValue":1440000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.12.2028"
+      }
+    ]
+  },
+  {
+    "id":200025,
+    "name":"Basiskredit Darlehen",
+    "type":"Darlehen",
+    "limitAmount":1800000,
+    "amortisationAmountAnnual":6000,
+    "agreedAmortisationFrequency":12,
+    "contractNumber":"2000-00025.35",
+    "realSecurities":[
+      {
+        "type":"Reihenhaus",
+        "address":"Seestrasse 3333, 6064 Basel",
+        "collateralValue":1710000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.06.2028"
+      }
+    ]
+  },
+  {
+    "id":200026,
+    "name":"Basiskredit Rahmenkredit",
+    "type":"Rahmenkredit",
+    "limitAmount":1200000,
+    "amortisationAmountAnnual":8000,
+    "agreedAmortisationFrequency":3,
+    "contractNumber":"2000-00026.36",
+    "realSecurities":[
+      {
+        "type":"Einfamilienhaus",
+        "address":"Winkelgasse 3434, 7075 Chur",
+        "collateralValue":1140000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.09.2029"
+      }
+    ]
+  },
+  {
+    "id":200027,
+    "name":"Basiskredit Hypothek",
+    "type":"Hypothek",
+    "limitAmount":1000000,
+    "amortisationAmountAnnual":12000,
+    "agreedAmortisationFrequency":6,
+    "contractNumber":"2000-00027.37",
+    "realSecurities":[
+      {
+        "type":"Stockwerkeigentum",
+        "address":"Gassenweg 3535, 5054 Basel",
+        "collateralValue":1040000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.12.2029"
+      }
+    ]
+  },
+  {
+    "id":200028,
+    "name":"Basiskredit Darlehen",
+    "type":"Darlehen",
+    "limitAmount":1300000,
+    "amortisationAmountAnnual":4000,
+    "agreedAmortisationFrequency":4,
+    "contractNumber":"2000-00028.38",
+    "realSecurities":[
+      {
+        "type":"Bauland",
+        "address":"Parkstrasse 3636, 6065 Basel",
+        "collateralValue":1430000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.03.2030"
+      }
+    ]
+  },
+  {
+    "id":200029,
+    "name":"Basiskredit Rahmenkredit",
+    "type":"Rahmenkredit",
+    "limitAmount":1500000,
+    "amortisationAmountAnnual":8000,
+    "agreedAmortisationFrequency":1,
+    "contractNumber":"2000-00029.39",
+    "realSecurities":[
+      {
+        "type":"Gartenhaus",
+        "address":"Haldenweg 3737, 7076 Chur",
+        "collateralValue":1350000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.06.2030"
+      }
+    ]
+  },
+  {
+    "id":200030,
+    "name":"Basiskredit Hypothek",
+    "type":"Hypothek",
+    "limitAmount":700000,
+    "amortisationAmountAnnual":10000,
+    "agreedAmortisationFrequency":6,
+    "contractNumber":"2000-00030.40",
+    "realSecurities":[
+      {
+        "type":"Reihenhaus",
+        "address":"Höhenweg 3838, 8086 Zürich",
+        "collateralValue":770000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.09.2031"
+      }
+    ]
+  },
+  {
+    "id":200031,
+    "name":"Basiskredit Darlehen",
+    "type":"Darlehen",
+    "limitAmount":1300000,
+    "amortisationAmountAnnual":6000,
+    "agreedAmortisationFrequency":4,
+    "contractNumber":"2000-00031.41",
+    "realSecurities":[
+      {
+        "type":"Mehrfamilienhaus",
+        "address":"Feldweg 3939, 4042 Zürich",
+        "collateralValue":1300000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.12.2031"
+      }
+    ]
+  },
+  {
+    "id":200032,
+    "name":"Basiskredit Rahmenkredit",
+    "type":"Rahmenkredit",
+    "limitAmount":1600000,
+    "amortisationAmountAnnual":12000,
+    "agreedAmortisationFrequency":3,
+    "contractNumber":"2000-00032.42",
+    "realSecurities":[
+      {
+        "type":"Einfamilienhaus",
+        "address":"Berggasse 4040, 6066 Basel",
+        "collateralValue":1440000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.03.2032"
+      }
+    ]
+  },
+  {
+    "id":200033,
+    "name":"Basiskredit Hypothek",
+    "type":"Hypothek",
+    "limitAmount":1200000,
+    "amortisationAmountAnnual":8000,
+    "agreedAmortisationFrequency":2,
+    "contractNumber":"2000-00033.43",
+    "realSecurities":[
+      {
+        "type":"Stockwerkeigentum",
+        "address":"Alpenstrasse 4141, 5055 Basel",
+        "collateralValue":1170000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.06.2032"
+      }
+    ]
+  },
+  {
+    "id":200034,
+    "name":"Basiskredit Darlehen",
+    "type":"Darlehen",
+    "limitAmount":1000000,
+    "amortisationAmountAnnual":10000,
+    "agreedAmortisationFrequency":12,
+    "contractNumber":"2000-00034.44",
+    "realSecurities":[
+      {
+        "type":"Bauland",
+        "address":"Gassenweg 4242, 7077 Chur",
+        "collateralValue":1110000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.09.2033"
+      }
+    ]
+  },
+  {
+    "id":200035,
+    "name":"Basiskredit Rahmenkredit",
+    "type":"Rahmenkredit",
+    "limitAmount":800000,
+    "amortisationAmountAnnual":6000,
+    "agreedAmortisationFrequency":6,
+    "contractNumber":"2000-00035.45",
+    "realSecurities":[
+      {
+        "type":"Gartenhaus",
+        "address":"Parkstrasse 4343, 6067 Basel",
+        "collateralValue":720000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.12.2033"
+      }
+    ]
+  },
+  {
+    "id":200036,
+    "name":"Basiskredit Hypothek",
+    "type":"Hypothek",
+    "limitAmount":1500000,
+    "amortisationAmountAnnual":4000,
+    "agreedAmortisationFrequency":4,
+    "contractNumber":"2000-00036.46",
+    "realSecurities":[
+      {
+        "type":"Reihenhaus",
+        "address":"Haldenweg 4444, 8087 Zürich",
+        "collateralValue":1420000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.03.2034"
+      }
+    ]
+  },
+  {
+    "id":200037,
+    "name":"Basiskredit Darlehen",
+    "type":"Darlehen",
+    "limitAmount":1700000,
+    "amortisationAmountAnnual":12000,
+    "agreedAmortisationFrequency":1,
+    "contractNumber":"2000-00037.47",
+    "realSecurities":[
+      {
+        "type":"Mehrfamilienhaus",
+        "address":"Höhenweg 4545, 4043 Zürich",
+        "collateralValue":1700000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.06.2034"
+      }
+    ]
+  },
+  {
+    "id":200038,
+    "name":"Basiskredit Rahmenkredit",
+    "type":"Rahmenkredit",
+    "limitAmount":1900000,
+    "amortisationAmountAnnual":8000,
+    "agreedAmortisationFrequency":3,
+    "contractNumber":"2000-00038.48",
+    "realSecurities":[
+      {
+        "type":"Einfamilienhaus",
+        "address":"Feldweg 4646, 7078 Chur",
+        "collateralValue":2090000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.09.2025"
+      }
+    ]
+  },
+  {
+    "id":200039,
+    "name":"Basiskredit Hypothek",
+    "type":"Hypothek",
+    "limitAmount":1100000,
+    "amortisationAmountAnnual":10000,
+    "agreedAmortisationFrequency":6,
+    "contractNumber":"2000-00039.49",
+    "realSecurities":[
+      {
+        "type":"Stockwerkeigentum",
+        "address":"Bergstrasse 4747, 5056 Basel",
+        "collateralValue":990000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.12.2025"
+      }
+    ]
+  },
+  {
+    "id":200040,
+    "name":"Basiskredit Darlehen",
+    "type":"Darlehen",
+    "limitAmount":1300000,
+    "amortisationAmountAnnual":6000,
+    "agreedAmortisationFrequency":4,
+    "contractNumber":"2000-00040.50",
+    "realSecurities":[
+      {
+        "type":"Bauland",
+        "address":"Seestrasse 4848, 6068 Basel",
+        "collateralValue":1240000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.03.2026"
+      }
+    ]
+  },
+  {
+    "id":200041,
+    "name":"Basiskredit Rahmenkredit",
+    "type":"Rahmenkredit",
+    "limitAmount":1500000,
+    "amortisationAmountAnnual":8000,
+    "agreedAmortisationFrequency":2,
+    "contractNumber":"2000-00041.51",
+    "realSecurities":[
+      {
+        "type":"Gartenhaus",
+        "address":"Winkelgasse 4949, 8088 Zürich",
+        "collateralValue":1420000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.06.2026"
+      }
+    ]
+  },
+  {
+    "id":200042,
+    "name":"Basiskredit Hypothek",
+    "type":"Hypothek",
+    "limitAmount":900000,
+    "amortisationAmountAnnual":12000,
+    "agreedAmortisationFrequency":12,
+    "contractNumber":"2000-00042.52",
+    "realSecurities":[
+      {
+        "type":"Reihenhaus",
+        "address":"Hauptstrasse 5050, 3018 Bern",
+        "collateralValue":801000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.09.2027"
+      }
+    ]
+  },
+  {
+    "id":200043,
+    "name":"Basiskredit Darlehen",
+    "type":"Darlehen",
+    "limitAmount":1200000,
+    "amortisationAmountAnnual":4000,
+    "agreedAmortisationFrequency":6,
+    "contractNumber":"2000-00043.53",
+    "realSecurities":[
+      {
+        "type":"Mehrfamilienhaus",
+        "address":"Bahnhofstrasse 5151, 8006 Zürich",
+        "collateralValue":1200000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.12.2027"
+      }
+    ]
+  },
+  {
+    "id":200044,
+    "name":"Basiskredit Rahmenkredit",
+    "type":"Rahmenkredit",
+    "limitAmount":1400000,
+    "amortisationAmountAnnual":8000,
+    "agreedAmortisationFrequency":4,
+    "contractNumber":"2000-00044.54",
+    "realSecurities":[
+      {
+        "type":"Einfamilienhaus",
+        "address":"Feldweg 5252, 4044 Zürich",
+        "collateralValue":1260000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.03.2028"
+      }
+    ]
+  },
+  {
+    "id":200045,
+    "name":"Basiskredit Hypothek",
+    "type":"Hypothek",
+    "limitAmount":1600000,
+    "amortisationAmountAnnual":10000,
+    "agreedAmortisationFrequency":2,
+    "contractNumber":"2000-00045.55",
+    "realSecurities":[
+      {
+        "type":"Stockwerkeigentum",
+        "address":"Wiesenstrasse 5353, 7079 Chur",
+        "collateralValue":1440000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.06.2028"
+      }
+    ]
+  },
+  {
+    "id":200046,
+    "name":"Basiskredit Darlehen",
+    "type":"Darlehen",
+    "limitAmount":1800000,
+    "amortisationAmountAnnual":12000,
+    "agreedAmortisationFrequency":12,
+    "contractNumber":"2000-00046.56",
+    "realSecurities":[
+      {
+        "type":"Bauland",
+        "address":"Alpenstrasse 5454, 5057 Basel",
+        "collateralValue":1620000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.09.2029"
+      }
+    ]
+  },
+  {
+    "id":200047,
+    "name":"Basiskredit Rahmenkredit",
+    "type":"Rahmenkredit",
+    "limitAmount":1200000,
+    "amortisationAmountAnnual":6000,
+    "agreedAmortisationFrequency":1,
+    "contractNumber":"2000-00047.57",
+    "realSecurities":[
+      {
+        "type":"Gartenhaus",
+        "address":"Gassenweg 5555, 6069 Basel",
+        "collateralValue":1260000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.12.2029"
+      }
+    ]
+  },
+  {
+    "id":200048,
+    "name":"Basiskredit Hypothek",
+    "type":"Hypothek",
+    "limitAmount":1000000,
+    "amortisationAmountAnnual":10000,
+    "agreedAmortisationFrequency":6,
+    "contractNumber":"2000-00048.58",
+    "realSecurities":[
+      {
+        "type":"Reihenhaus",
+        "address":"Parkstrasse 5656, 8090 Zürich",
+        "collateralValue":990000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.03.2028"
+      }
+    ]
+  },
+  {
+    "id":200049,
+    "name":"Basiskredit Darlehen",
+    "type":"Darlehen",
+    "limitAmount":1300000,
+    "amortisationAmountAnnual":8000,
+    "agreedAmortisationFrequency":4,
+    "contractNumber":"2000-00049.59",
+    "realSecurities":[
+      {
+        "type":"Mehrfamilienhaus",
+        "address":"Haldenweg 5757, 3019 Bern",
+        "collateralValue":1300000,
+        "currency":"CHF",
+        "nextRevaluationDate":"30.06.2028"
+      }
+    ]
+  },
+  {
+    "id":200050,
+    "name":"Basiskredit Rahmenkredit",
+    "type":"Rahmenkredit",
+    "limitAmount":1500000,
+    "amortisationAmountAnnual":6000,
+    "agreedAmortisationFrequency":2,
+    "contractNumber":"2000-00050.60",
+    "realSecurities":[
+      {
+        "type":"Einfamilienhaus",
+        "address":"Feldweg 5858, 4045 Zürich",
+        "collateralValue":1420000,
+        "currency":"CHF",
+        "nextRevaluationDate":"31.09.2029"
+      }
+    ]
+  }
+]

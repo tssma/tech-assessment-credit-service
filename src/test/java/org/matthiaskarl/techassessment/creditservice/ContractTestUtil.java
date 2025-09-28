@@ -1,7 +1,8 @@
-package org.matthiaskarl.techassessment.creditservice.contract;
+package org.matthiaskarl.techassessment.creditservice;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
@@ -14,7 +15,7 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-final class ContractTestUtil {
+public class ContractTestUtil {
     static final ObjectMapper MAPPER = new ObjectMapper();
 
     static final Set<String> LOAN_TYPES = Set.of("ParentLoan", "ChildLoan");
@@ -48,14 +49,14 @@ final class ContractTestUtil {
         );
     }
 
-    static JsonNode fetchLoans(int port, String userId) throws Exception {
+    static ArrayNode fetchLoans(int port, String userId) throws Exception {
         String base = "http://localhost:" + port;
 
         Response response = RestAssured.given()
                 .when()
                 .get(base + "/service/v1/loansByUser/{userId}", userId);
 
-        return MAPPER.readTree(response.getBody().asString());
+        return (ArrayNode) MAPPER.readTree(response.getBody().asString());
     }
 
     static void assertRequiredText(JsonNode node, String field) {

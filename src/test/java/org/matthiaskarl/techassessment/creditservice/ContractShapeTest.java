@@ -1,4 +1,4 @@
-package org.matthiaskarl.techassessment.creditservice.contract;
+package org.matthiaskarl.techassessment.creditservice;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.matthiaskarl.techassessment.creditservice.contract.ContractTestUtil.*;
+import static org.matthiaskarl.techassessment.creditservice.ContractTestUtil.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ContractShapeTest {
@@ -16,7 +16,7 @@ class ContractShapeTest {
     int port;
 
     @ParameterizedTest
-    @MethodSource("org.matthiaskarl.techassessment.creditservice.contract.ContractTestUtil#getUserIds")
+    @MethodSource("org.matthiaskarl.techassessment.creditservice.ContractTestUtil#getUserIds")
     void loansByUser_response_shape_and_formats(String userId) throws Exception {
         JsonNode loans = fetchLoans(port, userId);
         assertThat(loans.size()).isGreaterThan(0);

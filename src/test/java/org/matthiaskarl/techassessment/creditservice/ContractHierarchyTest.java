@@ -1,4 +1,4 @@
-package org.matthiaskarl.techassessment.creditservice.contract;
+package org.matthiaskarl.techassessment.creditservice;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import org.junit.jupiter.api.Test;
@@ -12,7 +12,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.matthiaskarl.techassessment.creditservice.contract.ContractTestUtil.*;
+import static org.matthiaskarl.techassessment.creditservice.ContractTestUtil.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ContractHierarchyTest {

@@ -20,7 +20,7 @@ Assumptions:
 7.) Assuming interestPaymentFrequency defines how often per year interest is paid
 8.) Assuming defaultSettlementAccountNumber of the ParentLoan should be set to null
 9.) S7: “the childLoans interestDue is set to interestRate = 2.5” => ??
-10.) GIVEN a financing object with two products "prodA" & "prodB"
+10.) S2: GIVEN a financing object with two products "prodA" & "prodB"
 AND "prodA" outstandingAmount = 120'000
 AND "prodB" outstandingAmount = 85'000
 => there is no field "outstandingAmount" on Entity "Product", only "amount" => assuming "amount" is "outstandingAmount"

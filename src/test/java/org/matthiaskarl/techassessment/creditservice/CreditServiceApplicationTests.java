@@ -81,7 +81,6 @@ class CreditServiceApplicationTests {
         Assertions.assertThat(parentLoan.get("outstandingAmount").decimalValue()).isEqualByComparingTo(childLoanSum);
     }
 
-
     @Test
     @DisplayName("""
                 GIVEN a financing object with two products "prodA" & "prodB"
@@ -106,10 +105,6 @@ class CreditServiceApplicationTests {
         assertThat(parentLoan.get("startDate").asText()).isEqualTo("2019-04-14T00:00:00.000Z");
         assertThat(parentLoan.get("endDate").asText()).isEqualTo("2033-03-22T00:00:00.000Z");
 
-        childLoans.forEach(childLoan -> {
-            System.out.println(childLoan.get("startDate").asText() + " - " + childLoan.get("endDate").asText());
-        });
-
         assertThat(childLoans.stream().anyMatch(cl ->
                 cl.get("startDate").asText().equals("2019-04-14T00:00:00.000Z") && cl.get("endDate").asText().equals("2029-04-14T00:00:00.000Z")
         )).isTrue();
@@ -117,8 +112,42 @@ class CreditServiceApplicationTests {
         assertThat(childLoans.stream().anyMatch(cl ->
                 cl.get("startDate").asText().equals("2023-03-22T00:00:00.000Z") && cl.get("endDate").asText().equals("2033-03-22T00:00:00.000Z")
         )).isTrue();
-
     }
 
+    @ParameterizedTest
+    @DisplayName("""
+            #1
+            GIVEN a financing object with two products "prodA" & "prodB"
+            AND "prodA" isOverdue = true
+            AND "prodB" isOverdue = false
+            WHEN the data is returned from the API
+            THEN the parentLoan isOverdue = true
+            AND the two childLoan isOverdue is set to true and false respectively
+            #2
+            GIVEN a financing object with two products "prodA" & "prodB"
+            AND "prodA" isOverdue = false
+            AND "prodB" isOverdue = false
+            WHEN the data is returned from the API
+            THEN the parentLoan isOverdue = false
+            AND the two childLoan isOverdue is set to false for both
+            """)
+    @MethodSource("org.matthiaskarl.techassessment.creditservice.ContractTestUtil#getUserIds")
+    void testLendingOverdue(String userId) throws Exception {
+        ArrayNode loans = fetchLoans(port, userId);
+
+        JsonNode parentLoan = StreamSupport.stream(loans.spliterator(), false)
+                .filter(loan -> loan.get("loanType").asText().equals("ParentLoan"))
+                .findAny()
+                .orElseThrow();
+
+        List<JsonNode> childLoans = StreamSupport.stream(loans.spliterator(), false)
+                .filter(loan -> loan.get("loanType").asText().equals("ChildLoan"))
+                .toList();
+
+        boolean anyChildOverdue = childLoans.stream()
+                .anyMatch(cl -> cl.get("isOverdue").booleanValue());
+
+        assertThat(parentLoan.get("isOverdue").booleanValue()).isEqualTo(anyChildOverdue);
+    }
 
 }

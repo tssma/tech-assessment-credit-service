@@ -8,9 +8,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.matthiaskarl.techassessment.creditservice.domain.FinancingObject;
 import org.matthiaskarl.techassessment.creditservice.domain.Owner;
-import org.matthiaskarl.techassessment.creditservice.domain.Product;
 import org.matthiaskarl.techassessment.creditservice.repository.FinancingObjectRepository;
-import org.matthiaskarl.techassessment.creditservice.repository.ProductsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
@@ -18,7 +16,6 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import java.util.List;
 import java.util.stream.StreamSupport;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.matthiaskarl.techassessment.creditservice.ContractTestUtil.fetchLoans;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

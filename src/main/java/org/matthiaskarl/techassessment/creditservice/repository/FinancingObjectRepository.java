@@ -14,10 +14,6 @@ public class FinancingObjectRepository {
     private final List<FinancingObject> data = RepositoryUtils.read(PATH, new TypeReference<>() {
     });
 
-    public List<FinancingObject> findAll() {
-        return data;
-    }
-
     public List<FinancingObject> findByOwnerId(long ownerId) {
         return data.stream()
                 .filter(fo -> fo.owners().stream().anyMatch(owner -> owner.id() == ownerId))

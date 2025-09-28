@@ -4,7 +4,7 @@ public record Product(
         long id,
         String name,
         String type,
-        double amount,
+        long amount,
         String currencyCode,
         double interestRate,
         String startDate,

@@ -1,5 +1,8 @@
 package org.matthiaskarl.techassessment.creditservice.dto;
 
+import lombok.Builder;
+
+@Builder
 public record CollateralDto(
         String type,
         String currentValue,

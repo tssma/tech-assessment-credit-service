@@ -1,7 +1,10 @@
 package org.matthiaskarl.techassessment.creditservice.dto;
 
+import lombok.Builder;
+
 import java.util.List;
 
+@Builder
 public record LoanDto(
         String id,
         String loanType,

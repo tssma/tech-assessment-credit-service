@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import org.matthiaskarl.techassessment.creditservice.domain.Product;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -22,6 +23,15 @@ public class ProductsRepository {
 
     public Product findById(long id) {
         return byId.get(id);
+    }
+
+    public List<Product> findByIds(List<Long> ids) {
+        List<Product> products = new ArrayList<>();
+        for (Long id : ids) {
+            Product product = findById(id);
+            products.add(product);
+        }
+        return products;
     }
 
 }

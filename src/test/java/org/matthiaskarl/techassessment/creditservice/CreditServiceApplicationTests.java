@@ -45,7 +45,11 @@ class CreditServiceApplicationTests {
         Assertions.assertThat(borrowerNames.size()).isEqualTo(1);
 
         List<FinancingObject> financingObjects = financingObjectRepository.findByOwnerId(Long.parseLong(userId));
-        financingObjects.forEach(financingObject -> Assertions.assertThat(financingObject.owners().stream().map(Owner::id).toList()).contains(Long.valueOf(userId)));
+        financingObjects.forEach(financingObject -> Assertions.assertThat(
+                        financingObject.owners().stream()
+                                .map(Owner::id)
+                                .toList())
+                .contains(Long.valueOf(userId)));
     }
 
 }

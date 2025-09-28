@@ -1,10 +1,13 @@
 package org.matthiaskarl.techassessment.creditservice;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.matthiaskarl.techassessment.creditservice.domain.FinancingObject;
+import org.matthiaskarl.techassessment.creditservice.repository.RepositoryUtils;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
@@ -23,30 +26,14 @@ public class ContractTestUtil {
     static final Set<String> PAYMENT_FREQ = Set.of("Annual", "Semiannual", "Every 4 months", "Quarterly", "Bi-monthly", "Monthly", "Custom");
     static final Set<String> INTEREST_PAYMENT_FREQ = Set.of("Monthly", "Bi-monthly", "Quarterly", "Triannual", "Semiannual", "Annual", "Custom");
 
-    // TODO extract from data
     static Stream<String> getUserIds() {
-        return Stream.of(
-                "11110001",
-                "11110002",
-                "11110003",
-                "11110004",
-                "11110005",
-                "11110006",
-                "11110007",
-                "11110008",
-                "11110009",
-                "11110010",
-                "11110011",
-                "11110012",
-                "11110013",
-                "11110014",
-                "11110015",
-                "11110016",
-                "11110017",
-                "11110018",
-                "11110019",
-                "11110020"
-        );
+        List<FinancingObject> financingObjects = RepositoryUtils.read("20231210_TestData_FINANCING_OBJECT.json", new TypeReference<>() {
+        });
+
+        return financingObjects.stream()
+                .flatMap(financingObject -> financingObject.owners().stream())
+                .map(owner -> String.valueOf(owner.id()))
+                .distinct();
     }
 
     static ArrayNode fetchLoans(int port, String userId) throws Exception {

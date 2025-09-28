@@ -108,7 +108,7 @@ public class ParentLoanMapper implements Function<ParentLoanMappingRequest, Loan
     }
 
     private static boolean haveSameCurrency(List<Product> products) {
-        return products.stream().map(Product::currencyCode).distinct().count() > 1;
+        return products.stream().map(Product::currencyCode).distinct().count() == 1;
     }
 
 }

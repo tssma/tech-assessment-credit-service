@@ -5,6 +5,7 @@ import org.matthiaskarl.techassessment.creditservice.domain.*;
 import org.matthiaskarl.techassessment.creditservice.dto.CollateralDto;
 import org.matthiaskarl.techassessment.creditservice.dto.LoanDto;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -30,6 +31,9 @@ public class ChildLoanMapper implements Function<ChildLoanMappingRequest, LoanDt
                 .map(Owner::name)
                 .toList();
 
+        String startDate = StringUtils.hasText(product.startDate()) ? LocalDate.parse(product.startDate(), SOURCE_DATE_TIME_FORMATTER).format(DateTimeFormatter.ISO_DATE) + "T00:00:00.000Z" : "";
+        String endDate = StringUtils.hasText(product.endDate()) ? LocalDate.parse(product.endDate(), SOURCE_DATE_TIME_FORMATTER).format(DateTimeFormatter.ISO_DATE) + "T00:00:00.000Z" : "";
+
         String parentLoanId = String.valueOf(financingObject.id());
         return LoanDto.builder()
                 .id(String.valueOf(product.id()))
@@ -44,10 +48,10 @@ public class ChildLoanMapper implements Function<ChildLoanMappingRequest, LoanDt
                 .interestDue(String.valueOf(product.interestDue()))
                 .isOverdue(product.isOverdue())
                 .parentLoanId(parentLoanId)
-                .startDate(LocalDate.parse(product.startDate(), SOURCE_DATE_TIME_FORMATTER).format(DateTimeFormatter.ISO_DATE) + "T00:00:00.000Z")
-                .endDate(LocalDate.parse(product.endDate(), SOURCE_DATE_TIME_FORMATTER).format(DateTimeFormatter.ISO_DATE) + "T00:00:00.000Z")
+                .startDate(startDate)
+                .endDate(endDate)
                 .borrower(borrowerNames)
-                .defaultSettlementAccountNumber(null)
+                .defaultSettlementAccountNumber(product.defaultSettlementAccountNumber())
                 .paymentFrequency(null)
                 .interestPaymentFrequency(annualFrequencyMapper.apply(product.interestPaymentFrequency()))
                 .collateral(mapCollaterals(limit))

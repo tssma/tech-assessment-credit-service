@@ -9,11 +9,11 @@ import io.restassured.response.Response;
 import org.matthiaskarl.techassessment.creditservice.domain.FinancingObject;
 import org.matthiaskarl.techassessment.creditservice.repository.RepositoryUtils;
 
-import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeParseException;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -23,8 +23,6 @@ public class ContractTestUtil {
 
     static final Set<String> LOAN_TYPES = Set.of("ParentLoan", "ChildLoan");
     static final Set<String> LOAN_STATUS = Set.of("active", "inactive");
-    static final Set<String> PAYMENT_FREQ = Set.of("Annual", "Semiannual", "Every 4 months", "Quarterly", "Bi-monthly", "Monthly", "Custom");
-    static final Set<String> INTEREST_PAYMENT_FREQ = Set.of("Monthly", "Bi-monthly", "Quarterly", "Triannual", "Semiannual", "Annual", "Custom");
 
     static Stream<String> getUserIds() {
         List<FinancingObject> financingObjects = RepositoryUtils.read("20231210_TestData_FINANCING_OBJECT.json", new TypeReference<>() {
@@ -78,24 +76,6 @@ public class ContractTestUtil {
     static String getText(JsonNode node, String inputField) {
         JsonNode field = node.get(inputField);
         return (field == null || field.isNull()) ? null : field.asText();
-    }
-
-    static BigDecimal toBigDecimal(String s) {
-        return new BigDecimal(s);
-    }
-
-    static OffsetDateTime parseOffsetDateTime(String string) {
-        return OffsetDateTime.parse(string);
-    }
-
-    static List<String> asStringList(JsonNode arrayNode) {
-        List<String> list = new ArrayList<>();
-        arrayNode.forEach(n -> list.add(n.asText()));
-        return list;
-    }
-
-    static Map<String, Long> counts(List<String> list) {
-        return list.stream().collect(Collectors.groupingBy(x -> x, Collectors.counting()));
     }
 
 }

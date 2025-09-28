@@ -7,6 +7,8 @@ import org.matthiaskarl.techassessment.creditservice.dto.LoanDto;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -94,7 +96,11 @@ public class ParentLoanMapper implements Function<ParentLoanMappingRequest, Loan
                     .currencyCode(realSecurity.currency())
                     .specification(realSecurity.address())
                     .nextRevaluationDate(LocalDate.parse(realSecurity.nextRevaluationDate(), SOURCE_DATE_TIME_FORMATTER).format(DateTimeFormatter.ISO_DATE))
-                    .amortisationPaymentAmount(String.valueOf(limit.amortisationAmountAnnual() / limit.agreedAmortisationFrequency()))
+                    .amortisationPaymentAmount(
+                            BigDecimal.valueOf(limit.amortisationAmountAnnual())
+                                    .divide(BigDecimal.valueOf(limit.agreedAmortisationFrequency()), 2, RoundingMode.HALF_UP)
+                                    .toPlainString()
+                    )
                     .build();
             collaterals.add(collateralDto);
         }

@@ -132,7 +132,7 @@ class CreditServiceApplicationTests {
             AND the two childLoan isOverdue is set to false for both
             """)
     @MethodSource("org.matthiaskarl.techassessment.creditservice.ContractTestUtil#getUserIds")
-    void testLendingOverdue(String userId) throws Exception {
+    void lendingOverdue(String userId) throws Exception {
         ArrayNode loans = fetchLoans(port, userId);
 
         JsonNode parentLoan = StreamSupport.stream(loans.spliterator(), false)
@@ -148,6 +148,35 @@ class CreditServiceApplicationTests {
                 .anyMatch(cl -> cl.get("isOverdue").booleanValue());
 
         assertThat(parentLoan.get("isOverdue").booleanValue()).isEqualTo(anyChildOverdue);
+    }
+
+    @Test
+    @DisplayName("""
+                GIVEN a financing object with a limit "LimA"
+                AND "limA" amortisationAmountAnnual = 5000
+                AND "limA" agreedAmortisationFrequency = 4
+                WHEN the data is returned from the API
+                THEN the parentLoan amortisationPaymentAmount = 1250 (5000/4)
+                AND the parentLoan paymentFrequency = 4
+                AND the childLoan(s) amortisationPaymentAmount = null and paymentFrequency = null
+            """)
+    void parentLoanAmortisationPaymentAmountAndFrequency() throws Exception {
+        ArrayNode loans = fetchLoans(port, "11110039");
+
+        JsonNode parentLoan = StreamSupport.stream(loans.spliterator(), false)
+                .filter(loan -> loan.get("loanType").asText().equals("ParentLoan"))
+                .findAny()
+                .orElseThrow();
+
+        assertThat(parentLoan.get("collateral").get(0).get("amortisationPaymentAmount").textValue()).isEqualTo("1666.67");
+        assertThat(parentLoan.get("paymentFrequency").textValue()).isEqualTo("6");
+
+        loans.forEach(loan -> {
+            if (loan.get("loanType").asText().equals("ChildLoan")) {
+                assertThat(loan.get("collateral").get(0).get("amortisationPaymentAmount").isNull()).isTrue();
+                assertThat(loan.get("paymentFrequency").isNull()).isTrue();
+            }
+        });
     }
 
 }

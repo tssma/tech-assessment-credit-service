@@ -24,3 +24,4 @@ Assumptions:
 AND "prodA" outstandingAmount = 120'000
 AND "prodB" outstandingAmount = 85'000
 => there is no field "outstandingAmount" on Entity "Product", only "amount" => assuming "amount" is "outstandingAmount"
+11.) S5: "...AND the parentLoan paymentFrequency = 4..." but the openAPI spec defines it as "Quarterly" => Keeping "4"

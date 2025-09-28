@@ -179,4 +179,72 @@ class CreditServiceApplicationTests {
         });
     }
 
+    @Test
+    @DisplayName("""
+                GIVEN a financing object with two products "prodA" & "prodB"
+                AND "prodA" interestDue = 01.01.2024
+                AND "prodB" interestDue = 01.03.2024
+                WHEN the data is returned from the API
+                THEN the parentLoan interestDue = 01.01.2024
+                AND the childLoans interestDue is set to 01.01.2024 and 01.03.2024 respectively
+            """)
+    void parentAndChildLoanInterestDueDates() throws Exception {
+        ArrayNode loans = fetchLoans(port, "11110039");
+
+        JsonNode parentLoan = StreamSupport.stream(loans.spliterator(), false)
+                .filter(loan -> loan.get("loanType").asText().equals("ParentLoan"))
+                .findAny()
+                .orElseThrow();
+
+        List<JsonNode> childLoans = StreamSupport.stream(loans.spliterator(), false)
+                .filter(loan -> loan.get("loanType").asText().equals("ChildLoan"))
+                .toList();
+
+        assertThat(parentLoan.get("interestDue").asText()).isEqualTo("1323.45");
+
+        assertThat(childLoans.stream().anyMatch(cl ->
+                cl.get("interestDue").asText().equals("1323.45")
+        )).isTrue();
+
+        assertThat(childLoans.stream().anyMatch(cl ->
+                cl.get("interestDue").asText().equals("1587.65")
+        )).isTrue();
+    }
+
+    @Test
+    @DisplayName("""
+            GIVEN a financing object with two products "prodA" & "prodB"
+            AND "prodA" interestRate = 2.5, interestPaymentFrequency = 2
+            AND "prodB" interestRate = 1.2, interestPaymentFrequency = 6
+            WHEN the data is returned from the API
+            THEN the parentLoan interestRate = null, interestPaymentFrequency = null
+            AND the childLoans interestDue is set to interestRate = 2.5, interestPaymentFrequency
+            = 2 and interestRate = 1.2, interestPaymentFrequency = 6 respectively
+            """)
+    void parentAndChildLoanInterestRatesAndFrequencies() throws Exception {
+        ArrayNode loans = fetchLoans(port, "11110039");
+
+        JsonNode parentLoan = StreamSupport.stream(loans.spliterator(), false)
+                .filter(loan -> loan.get("loanType").asText().equals("ParentLoan"))
+                .findAny()
+                .orElseThrow();
+
+        List<JsonNode> childLoans = StreamSupport.stream(loans.spliterator(), false)
+                .filter(loan -> loan.get("loanType").asText().equals("ChildLoan"))
+                .toList();
+
+        assertThat(parentLoan.get("interestRate").isNull()).isTrue();
+        assertThat(parentLoan.get("interestPaymentFrequency").isNull()).isTrue();
+
+        assertThat(childLoans.stream().anyMatch(cl ->
+                cl.get("interestRate").textValue().equals(("4.25")) &&
+                        cl.get("interestPaymentFrequency").textValue().equals("Quarterly")
+        )).isTrue();
+
+        assertThat(childLoans.stream().anyMatch(cl ->
+                cl.get("interestRate").textValue().equals(("3.75")) &&
+                        cl.get("interestPaymentFrequency").textValue().equals("Annual")
+        )).isTrue();
+    }
+
 }

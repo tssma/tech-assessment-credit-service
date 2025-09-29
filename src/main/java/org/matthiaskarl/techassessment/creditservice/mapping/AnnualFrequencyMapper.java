@@ -16,7 +16,7 @@ public class AnnualFrequencyMapper implements Function<Number, String> {
             case 4 -> "Quarterly";
             case 6 -> "Bi-monthly";
             case 12 -> "Monthly";
-            default -> "Every " + frequency + " months";
+            default -> frequency + " times per year";
         };
     }
 
